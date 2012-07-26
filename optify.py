@@ -445,8 +445,8 @@ class OptifyService:
 
     def get_visitors(
         self, site_token,
-        start_date=datetime.date.today() + datetime.timedelta(days=-1),
-        end_date=datetime.date.today(), include_isp=False, offset=0,
+        start_date=datetime.datetime.utcnow() + datetime.timedelta(days=-1),
+        end_date=datetime.datetime.utcnow(), include_isp=False, offset=0,
         count=10
     ):
         path = '/v1/sites/' + site_token + '/visitors'
